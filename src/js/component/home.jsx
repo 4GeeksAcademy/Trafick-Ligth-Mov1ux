@@ -7,17 +7,16 @@ import Yellow from "./Yellow";
 import Green from "./Green";
 //create your first component
 const Home = () => {
-	const [selectedColor, setSelectedColor] = useState("green");
+	const [selectedColor, setSelectedColor] = useState("none");
 	return (
-		<div className="semaforo text-center d-inline-block ">
-			<div 
-			className={`light red ${selectedColor === "red" ? "shineRed" : "red"}`}>
+		<div className="semaforo text-center d-inline-block">
+			<div onClick={() => setSelectedColor("red")} className={`light red ${selectedColor === "red" ? "shineRed" : "red"}`}>
 				
 			</div>
-			<div className={`light yellow ${selectedColor === "yellow" ? "shineYellow" : "yellow"}`}>
+			<div onClick={() => setSelectedColor("yellow")} className={`light yellow ${selectedColor === "yellow" ? "shineYellow" : "yellow"}`}>
 
 			</div>
-			<div className={`light green ${selectedColor === "green" ? "shineGreen" : "green"}`}>
+			<div onClick={() => setSelectedColor("green")} className={`light green ${selectedColor === "green" ? "shineGreen" : "green"}`}>
 
 			</div>
 		</div>
